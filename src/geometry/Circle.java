@@ -2,6 +2,9 @@ package geometry;
 
 import interfaces.Element;
 
+/**
+ * Class that represents a Circle and implements an Element
+ */
 public abstract class Circle implements Element {
 	
 	private Point center;

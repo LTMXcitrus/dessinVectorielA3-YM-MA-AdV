@@ -2,6 +2,10 @@ package geometry;
 
 import interfaces.Element;
 
+/**
+ * Class that represents a point and implements an Element
+ */
+
 public abstract class Point implements Element{
 	
 	private double x;
