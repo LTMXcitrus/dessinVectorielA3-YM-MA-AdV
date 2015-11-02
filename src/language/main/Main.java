@@ -14,6 +14,8 @@ import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
+import svg.DrawingSVG;
+
 public class Main {
 	
 	public static void main(String[] args) throws IOException {
@@ -35,6 +37,10 @@ public class Main {
 		AST ast = visitor.visit(tree);
 		
 		Drawing drawing = (Drawing) ast;
+		
+		DrawingSVG svg = drawing.draw();
+		
+		System.out.println(svg.draw());
 		
 		
 	}

@@ -6,7 +6,7 @@ import geometry.Point;
 
 public class CircleSVG extends Circle{
 	
-	public CircleSVG(Point center, double radius, Color color){
+	public CircleSVG(Point center, double radius, String color){
 		super(center, radius, color);
 	}
 	

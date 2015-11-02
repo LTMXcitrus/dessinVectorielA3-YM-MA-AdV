@@ -15,7 +15,7 @@ public class Main {
 		Drawing d = new DrawingSVG(500, 500);
 		
 		PointSVG center = new PointSVG(50,50);
-		CircleSVG c = new CircleSVG(center, 50, Color.BLUE);
+		CircleSVG c = new CircleSVG(center, 50, "blue");
 		d.addElementToDrawing(c);
 		
 		PointSVG start = new PointSVG(0,0);

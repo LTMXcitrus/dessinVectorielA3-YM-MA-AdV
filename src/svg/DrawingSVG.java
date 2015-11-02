@@ -36,7 +36,7 @@ public class DrawingSVG extends Drawing {
 		    System.out.println ("Erreur lors de l'écriture du svg : " + exception.getMessage());
 		}
 		
-		System.out.println(stringSVG);
+		//System.out.println(stringSVG);
 		return stringSVG;
 	}
 

@@ -9,13 +9,13 @@ public abstract class Circle implements Element {
 	
 	private Point center;
 	private double radius;
-	private Color color;
+	private String color;
 	
 	public Circle() {
 		super();
 	}
 
-	public Circle(Point center, double radius, Color color) {
+	public Circle(Point center, double radius, String color) {
 		super();
 		this.center = center;
 		this.radius = radius;
@@ -38,11 +38,11 @@ public abstract class Circle implements Element {
 		this.radius = radius;
 	}
 
-	public Color getColor() {
+	public String getColor() {
 		return color;
 	}
 
-	public void setColor(Color color) {
+	public void setColor(String color) {
 		this.color = color;
 	}
 
