@@ -5,7 +5,10 @@ import interfaces.Element;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Drawing implements  Element {
+/**
+ * Class to create a Drawing and implments Element
+ */
+public abstract class Drawing implements Element {
 
 	private double width;
 	private double height;

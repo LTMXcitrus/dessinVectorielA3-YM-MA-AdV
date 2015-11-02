@@ -1,7 +1,11 @@
 package interfaces;
 
+/**
+ * Interface Element
+ */
+
 public interface Element {
 	
-	public void draw();
+	public String draw();
 
 }

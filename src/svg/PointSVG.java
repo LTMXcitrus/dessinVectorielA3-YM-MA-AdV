@@ -8,6 +8,8 @@ public class PointSVG extends Point{
 		super(x, y);
 	}
 	
-	public void draw(){}
+	public String draw(){
+		return null
+	;}
 
 }

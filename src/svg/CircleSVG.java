@@ -10,7 +10,7 @@ public class CircleSVG extends Circle{
 		super(center, radius, color);
 	}
 	
-	public void draw(){
+	public String draw(){
 		String result =  "<circle cx=\""
 				+this.getCenter().getX()+""
 						+ "\" cy=\""+
@@ -18,7 +18,8 @@ public class CircleSVG extends Circle{
 						+ "\" r=\""
 						+ this.getRadius()+"\" fill=\""
 								+ this.getColor()+"\" />";
-		System.out.println(result);
+		//System.out.println(result);
+		return result;
 	}
 
 }

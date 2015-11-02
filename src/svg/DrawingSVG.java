@@ -1,24 +1,43 @@
 package svg;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import geometry.Drawing;
 import interfaces.Element;
 
-public class DrawingSVG extends Drawing{
+public class DrawingSVG extends Drawing {
 
 	public DrawingSVG(double width, double height) {
 		super(width, height);
 	}
 
 	@Override
-	public void draw() {
-		System.out.println(
-				"<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" "
+	public String draw() {
+		String stringSVG ="<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" "
 				+ "width=\""+this.getWidth()+"\""
-						+ " height=\""+this.getHeight()+"\">");
+				+ " height=\""+this.getHeight()+"\">\n";
 		for(Element e : this.getElements()){
-			e.draw();
+			stringSVG += e.draw()+"\n";
 		}
-		System.out.println("</svg>");
+		stringSVG +="</svg>";
+		
+		try
+		{
+		    FileWriter fw = new FileWriter (new File("test.svg"));
+		 
+		    fw.write(stringSVG);
+		 
+		    fw.close();
+		}
+		catch (IOException exception)
+		{
+		    System.out.println ("Erreur lors de l'écriture du svg : " + exception.getMessage());
+		}
+		
+		System.out.println(stringSVG);
+		return stringSVG;
 	}
 
 }
