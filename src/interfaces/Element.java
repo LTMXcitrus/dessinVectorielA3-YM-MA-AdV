@@ -4,8 +4,8 @@ package interfaces;
  * Interface Element
  */
 
-public interface Element {
+public interface Element<T> {
 	
-	public String draw();
+	public T draw();
 
 }

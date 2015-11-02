@@ -1,12 +1,11 @@
 package svg;
 
-import geometry.Color;
 import geometry.Line;
 import geometry.Point;
 
-public class LineSVG extends Line {
+public class LineSVG extends Line<String> {
 
-	public LineSVG(Point start, Point end, double width, Color color) {
+	public LineSVG(Point<String> start, Point<String> end, double width, String color) {
 		super(start, end, width, color);
 	}
 

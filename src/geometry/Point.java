@@ -6,7 +6,7 @@ import interfaces.Element;
  * Class that represents a point and implements an Element
  */
 
-public abstract class Point implements Element{
+public abstract class Point<T> implements Element<T>{
 	
 	private double x;
 	private double y;

@@ -1,10 +1,9 @@
 package svg;
 
 import geometry.Circle;
-import geometry.Color;
 import geometry.Point;
 
-public class CircleSVG extends Circle{
+public class CircleSVG extends Circle<String>{
 	
 	public CircleSVG(Point center, double radius, String color){
 		super(center, radius, color);

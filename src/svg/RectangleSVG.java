@@ -1,12 +1,11 @@
 package svg;
 
-import geometry.Color;
 import geometry.Point;
 import geometry.Rectangle;
 
-public class RectangleSVG extends Rectangle {
+public class RectangleSVG extends Rectangle<String> {
 
-	public RectangleSVG(Point origin, double width, double height, Color color) {
+	public RectangleSVG(Point<String> origin, double width, double height, String color) {
 		super(origin, width, height, color);
 	}
 
@@ -25,5 +24,4 @@ public class RectangleSVG extends Rectangle {
 		//System.out.println(result);
 		return result;
 	}
-
 }

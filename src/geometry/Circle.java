@@ -5,9 +5,9 @@ import interfaces.Element;
 /**
  * Class that represents a Circle and implements an Element
  */
-public abstract class Circle implements Element {
+public abstract class Circle<T> implements Element<T> {
 	
-	private Point center;
+	private Point<T> center;
 	private double radius;
 	private String color;
 	
@@ -15,18 +15,18 @@ public abstract class Circle implements Element {
 		super();
 	}
 
-	public Circle(Point center, double radius, String color) {
+	public Circle(Point<T> center, double radius, String color) {
 		super();
 		this.center = center;
 		this.radius = radius;
 		this.color = color;
 	}
 
-	public Point getCenter() {
+	public Point<T> getCenter() {
 		return center;
 	}
 
-	public void setCenter(Point center) {
+	public void setCenter(Point<T> center) {
 		this.center = center;
 	}
 
