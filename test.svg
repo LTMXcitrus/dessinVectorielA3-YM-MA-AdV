@@ -1,3 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="500.0" height="500.0">
-<circle cx="120.0" cy="120.0" r="50.0" fill="red" />
+<circle cx="120.0" cy="120.0" r="50.0" fill="blue" />
+<ellipse cx="120.0" cy="120.0" rx="20.0" ry="30.0" fill="black" />
+<circle cx="380.0" cy="120.0" r="50.0" fill="blue" />
+<ellipse cx="380.0" cy="120.0" rx="20.0" ry="30.0" fill="black" />
+<ellipse cx="250.0" cy="380.0" rx="100.0" ry="30.0" fill="purple" />
+<ellipse cx="250.0" cy="380.0" rx="50.0" ry="15.0" fill="white" />
 </svg>

@@ -1,15 +1,15 @@
 package geometry;
 
-import interfaces.Element;
+import geometry.interfaces.Element;
 
-public abstract class Ellipse<T> implements Element<T> {
+public abstract class Ellipse<T,H> implements Element<T,H> {
 	
-	private Point<T> center;
+	private Point<T,H> center;
 	private double radiusX;
 	private double radiusY;
 	private String color;
 	
-	public Ellipse(Point<T> center, double radiusX, double radiusY, String color) {
+	public Ellipse(Point<T,H> center, double radiusX, double radiusY, String color) {
 		super();
 		this.center = center;
 		this.radiusX = radiusX;
@@ -21,11 +21,11 @@ public abstract class Ellipse<T> implements Element<T> {
 		super();
 	}
 
-	public Point<T> getCenter() {
+	public Point<T,H> getCenter() {
 		return center;
 	}
 
-	public void setCenter(Point<T> center) {
+	public void setCenter(Point<T,H> center) {
 		this.center = center;
 	}
 

@@ -1,13 +1,13 @@
 package geometry;
 
-import interfaces.Element;
+import geometry.interfaces.Element;
 
 /**
  * Class that represents a Circle and implements an Element
  */
-public abstract class Circle<T> implements Element<T> {
+public abstract class Circle<T,H> implements Element<T,H> {
 	
-	private Point<T> center;
+	private Point<T,H> center;
 	private double radius;
 	private String color;
 	
@@ -15,18 +15,18 @@ public abstract class Circle<T> implements Element<T> {
 		super();
 	}
 
-	public Circle(Point<T> center, double radius, String color) {
+	public Circle(Point<T,H> center, double radius, String color) {
 		super();
 		this.center = center;
 		this.radius = radius;
 		this.color = color;
 	}
 
-	public Point<T> getCenter() {
+	public Point<T,H> getCenter() {
 		return center;
 	}
 
-	public void setCenter(Point<T> center) {
+	public void setCenter(Point<T,H> center) {
 		this.center = center;
 	}
 

@@ -1,6 +1,6 @@
 package geometry;
 
-import interfaces.Element;
+import geometry.interfaces.Element;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,16 +8,16 @@ import java.util.List;
 /**
  * Class to create a Drawing and implments Element
  */
-public abstract class Drawing<T> implements Element<T> {
+public abstract class Drawing<T,H> implements Element<T,H> {
 
 	private double width;
 	private double height;
-	private List<Element<T>> elements;
+	private List<Element<T,H>> elements;
 
 	public Drawing(double width, double height){
 		this.width=width;
 		this.height=height;
-		elements = new ArrayList<Element<T>>();
+		elements = new ArrayList<Element<T,H>>();
 	}
 	
 	public double getWidth() {
@@ -36,15 +36,15 @@ public abstract class Drawing<T> implements Element<T> {
 		this.height = height;
 	}
 
-	public List<Element<T>> getElements() {
+	public List<Element<T,H>> getElements() {
 		return elements;
 	}
 
-	public void setElements(List<Element<T>> elements) {
+	public void setElements(List<Element<T,H>> elements) {
 		this.elements = elements;
 	}
 
-	public void addElementToDrawing(Element<T> e){
+	public void addElementToDrawing(Element<T,H> e){
 		elements.add(e);
 	}
 }

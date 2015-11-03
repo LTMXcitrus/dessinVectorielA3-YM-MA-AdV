@@ -1,10 +1,10 @@
 package geometry;
 
-import interfaces.Element;
+import geometry.interfaces.Element;
 
-public abstract class Rectangle<T> implements Element<T> {
+public abstract class Rectangle<T,H> implements Element<T,H> {
 	
-	private Point<T> origin;
+	private Point<T,H> origin;
 	private double width;
 	private double height;
 	private String color;
@@ -13,7 +13,7 @@ public abstract class Rectangle<T> implements Element<T> {
 		super();
 	}
 	
-	public Rectangle(Point<T> origin, double width, double height, String color) {
+	public Rectangle(Point<T,H> origin, double width, double height, String color) {
 		super();
 		this.origin = origin;
 		this.width = width;
@@ -21,10 +21,10 @@ public abstract class Rectangle<T> implements Element<T> {
 		this.color = color;
 	}
 	
-	public Point<T> getOrigin() {
+	public Point<T,H> getOrigin() {
 		return origin;
 	}
-	public void setOrigin(Point<T> origin) {
+	public void setOrigin(Point<T,H> origin) {
 		this.origin = origin;
 	}
 	public double getWidth() {

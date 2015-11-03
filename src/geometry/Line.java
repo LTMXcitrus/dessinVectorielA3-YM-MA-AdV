@@ -1,11 +1,11 @@
 package geometry;
 
-import interfaces.Element;
+import geometry.interfaces.Element;
 
-public abstract class Line<T> implements Element<T> {
+public abstract class Line<T,H> implements Element<T,H> {
 	
-	private Point<T> start;
-	private Point<T> end;
+	private Point<T,H> start;
+	private Point<T,H> end;
 	private String color;
 	private double width;
 
@@ -13,7 +13,7 @@ public abstract class Line<T> implements Element<T> {
 		super();
 	}
 	
-	public Line(Point<T> start, Point<T> end, double width, String color) {
+	public Line(Point<T,H> start, Point<T,H> end, double width, String color) {
 		super();
 		this.start = start;
 		this.end = end;
@@ -21,19 +21,19 @@ public abstract class Line<T> implements Element<T> {
 		this.width = width;
 	}
 	
-	public Point<T> getStart() {
+	public Point<T,H> getStart() {
 		return start;
 	}
 
-	public void setStart(Point<T> start) {
+	public void setStart(Point<T,H> start) {
 		this.start = start;
 	}
 
-	public Point<T> getEnd() {
+	public Point<T,H> getEnd() {
 		return end;
 	}
 
-	public void setEnd(Point<T> end) {
+	public void setEnd(Point<T,H> end) {
 		this.end = end;
 	}
 

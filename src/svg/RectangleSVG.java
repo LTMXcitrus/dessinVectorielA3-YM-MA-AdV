@@ -3,14 +3,14 @@ package svg;
 import geometry.Point;
 import geometry.Rectangle;
 
-public class RectangleSVG extends Rectangle<String> {
+public class RectangleSVG extends Rectangle<String,Void> {
 
-	public RectangleSVG(Point<String> origin, double width, double height, String color) {
+	public RectangleSVG(Point<String,Void> origin, double width, double height, String color) {
 		super(origin, width, height, color);
 	}
 
 	@Override
-	public String draw() {
+	public String draw(Void v) {
 		String result =  "<rect x=\""
 				+this.getOrigin().getX()
 						+ "\" y=\""+

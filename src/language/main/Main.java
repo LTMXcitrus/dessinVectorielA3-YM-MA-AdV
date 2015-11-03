@@ -40,7 +40,7 @@ public class Main {
 		
 		DrawingSVG svg = drawing.draw();
 		
-		System.out.println(svg.draw());
+		System.out.println(svg.draw(null));
 		
 		
 	}

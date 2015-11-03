@@ -3,14 +3,14 @@ package svg;
 import geometry.Ellipse;
 import geometry.Point;
 
-public class EllipseSVG extends Ellipse<String> {
+public class EllipseSVG extends Ellipse<String,Void> {
 
-	public EllipseSVG(Point<String> center, double radiusX, double radiusY, String color) {
+	public EllipseSVG(Point<String,Void> center, double radiusX, double radiusY, String color) {
 		super(center, radiusX, radiusY, color);
 	}
 
 	@Override
-	public String draw() {
+	public String draw(Void v) {
 		String result =  "<ellipse cx=\""
 				+this.getCenter().getX()+""
 						+ "\" cy=\""+

@@ -30,6 +30,6 @@ public class Main {
 		EllipseSVG e = new EllipseSVG(centerEllipse, 100, 50, "vert");
 		d.addElementToDrawing(e);
 		
-		d.draw();
+		d.draw(null);
 	}
 }
