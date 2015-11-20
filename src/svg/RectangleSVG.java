@@ -1,17 +1,16 @@
 package svg;
 
-import geometry.Color;
 import geometry.Point;
 import geometry.Rectangle;
 
-public class RectangleSVG extends Rectangle {
+public class RectangleSVG extends Rectangle<String,Void> {
 
-	public RectangleSVG(Point origin, double width, double height, Color color) {
+	public RectangleSVG(Point<String,Void> origin, double width, double height, String color) {
 		super(origin, width, height, color);
 	}
 
 	@Override
-	public String draw() {
+	public String draw(Void v) {
 		String result =  "<rect x=\""
 				+this.getOrigin().getX()
 						+ "\" y=\""+
@@ -25,5 +24,4 @@ public class RectangleSVG extends Rectangle {
 		//System.out.println(result);
 		return result;
 	}
-
 }

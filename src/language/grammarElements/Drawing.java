@@ -19,11 +19,12 @@ public class Drawing extends AST{
 		this(new Canvas(), new ArrayList<Shape>());
 	}
 
-	public void draw() {
+	public DrawingSVG draw() {
 		DrawingSVG drawing = canvas.draw();
 		for(Shape shape : shapes){
 			shape.draw(drawing);
 		}
+		return drawing;
 	}
 
 }

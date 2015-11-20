@@ -2,13 +2,14 @@ package svg;
 
 import geometry.Point;
 
-public class PointSVG extends Point{
+public class PointSVG extends Point<String,Void>{
 	
 	public PointSVG(double x, double y){
 		super(x, y);
 	}
 	
-	public String draw(){
+	@Override
+	public String draw(Void v){
 		return null
 	;}
 

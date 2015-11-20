@@ -1,6 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="500.0" height="500.0">
-<circle cx="50.0" cy="50.0" r="50.0" fill="BLUE" />
-<line x1="0.0" y1="0.0" x2="200.0" y2="200.0" style="stroke:RED;stroke-width:2.0"  />
-<rect x="20.0" y="20.0" width="100.0" height="100.0" style="fill:BLACK"  />
-<ellipse cx="200.0" cy="80.0" rx="100.0" ry="50.0" fill="GREEN" />
+<circle cx="120.0" cy="120.0" r="50.0" fill="blue" />
+<ellipse cx="120.0" cy="120.0" rx="20.0" ry="30.0" fill="black" />
+<circle cx="380.0" cy="120.0" r="50.0" fill="blue" />
+<ellipse cx="380.0" cy="120.0" rx="20.0" ry="30.0" fill="black" />
+<ellipse cx="250.0" cy="380.0" rx="100.0" ry="30.0" fill="purple" />
+<ellipse cx="250.0" cy="380.0" rx="50.0" ry="15.0" fill="white" />
 </svg>

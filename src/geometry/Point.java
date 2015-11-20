@@ -1,12 +1,12 @@
 package geometry;
 
-import interfaces.Element;
+import geometry.interfaces.Element;
 
 /**
  * Class that represents a point and implements an Element
  */
 
-public abstract class Point implements Element{
+public abstract class Point<T,H> implements Element<T,H>{
 	
 	private double x;
 	private double y;

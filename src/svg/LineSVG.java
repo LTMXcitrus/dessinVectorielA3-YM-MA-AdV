@@ -1,17 +1,16 @@
 package svg;
 
-import geometry.Color;
 import geometry.Line;
 import geometry.Point;
 
-public class LineSVG extends Line {
+public class LineSVG extends Line<String,Void> {
 
-	public LineSVG(Point start, Point end, double width, Color color) {
+	public LineSVG(Point<String,Void> start, Point<String,Void> end, double width, String color) {
 		super(start, end, width, color);
 	}
 
 	@Override
-	public String draw() {
+	public String draw(Void v) {
 		String result =  "<line x1=\""
 				+this.getStart().getX()+""
 						+ "\" y1=\""+
