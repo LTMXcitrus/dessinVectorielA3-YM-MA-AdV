@@ -1,5 +1,6 @@
-package visitors;
+package visitors.implementations;
 
+import visitors.Visitor;
 import geometry.Circle;
 import geometry.Drawing;
 import geometry.Ellipse;

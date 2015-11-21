@@ -1,9 +1,10 @@
-package visitors;
+package visitors.implementations;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import visitors.Visitor;
 import geometry.Circle;
 import geometry.Drawing;
 import geometry.Ellipse;

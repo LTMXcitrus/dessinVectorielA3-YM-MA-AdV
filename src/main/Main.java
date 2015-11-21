@@ -1,6 +1,6 @@
 package main;
 
-import visitors.VisitorSVG;
+import visitors.implementations.VisitorSVG;
 import geometry.Circle;
 import geometry.Drawing;
 import geometry.Ellipse;

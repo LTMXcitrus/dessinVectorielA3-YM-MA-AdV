@@ -17,8 +17,8 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 import visitors.Visitor;
-import visitors.VisitorDescription;
-import visitors.VisitorSVG;
+import visitors.implementations.VisitorDescription;
+import visitors.implementations.VisitorSVG;
 
 public class Main {
 	
