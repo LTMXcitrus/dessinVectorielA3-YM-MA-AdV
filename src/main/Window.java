@@ -40,6 +40,7 @@ public class Window extends JFrame{
 	private Visitor visitor = new VisitorSVG();
 	
 	private JTextPane area;
+	private SyntaxColor colorizer;
 
 	public Window() {
 		super("Générer une image");
@@ -65,12 +66,24 @@ public class Window extends JFrame{
 		
 		area = new JTextPane();
 		area.setPreferredSize(new Dimension(500,500));
+		colorizer = new SyntaxColor(area);
 		this.getContentPane().add(area, BorderLayout.CENTER);
 	}
 	
 	public void creerBas(){
 		JPanel panneauBas = new JPanel(new GridLayout(1, 3));
 		panneauBas.setPreferredSize(new Dimension(800, 200));
+		JButton colorize = new JButton("Colorize text");
+		colorize.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				colorizer.colorCercle();		
+			}
+		});
+		//panneauBas.add(colorize);
+		
+		
 		JComboBox<String> modulesList = new JComboBox<String>(getModules());
 		modulesList.addActionListener(new ActionListener() {
 			

@@ -48,7 +48,6 @@ public class Shape extends AST{
 			}
 			break;
 		case ELLIPSE:
-
 			try{
 				double x = Double.parseDouble(params.get(0).getValue());
 				double y = Double.parseDouble(params.get(1).getValue());
