@@ -53,7 +53,7 @@ public class VisitorSVG implements Visitor<String> {
 		String stringSVG = OPEN_SVG
 				+ WIDTH_DRAWING +c.getWidth()+ HEIGHT +c.getHeight()+ FIRST_CLOSE;
 		for(Element e : c.getElements()){
-			stringSVG += ((String)e.accept(this)) + "\n";
+			stringSVG += e.accept(this) + "\n";
 		}
 		stringSVG += CLOSE_SVG;
 
