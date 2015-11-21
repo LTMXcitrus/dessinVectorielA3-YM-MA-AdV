@@ -2,7 +2,7 @@ package language.interpreter;
 
 import language.grammarElements.AST;
 import language.grammarElements.Canvas;
-import language.grammarElements.Drawing;
+import language.grammarElements.Sheet;
 import language.grammarElements.Param;
 import language.grammarElements.Params;
 import language.grammarElements.Shape;
@@ -24,7 +24,7 @@ public class svgCreatorVisitorImpl extends svgCreatorBaseVisitor<AST>{
 		for(svgCreatorParser.ShapeContext shapeCtx : shapesCtx){
 			shapes.add( (Shape) visit(shapeCtx));
 		}
-		return new Drawing(canvas, shapes);
+		return new Sheet(canvas, shapes);
 	}
 	
 	@Override

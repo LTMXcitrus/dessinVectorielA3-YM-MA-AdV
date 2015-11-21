@@ -1,19 +1,17 @@
 package geometry;
 
+import visitors.Visitor;
 import geometry.interfaces.Element;
 
-public abstract class Line<T,H> implements Element<T,H> {
+public class Line implements Element {
 	
-	private Point<T,H> start;
-	private Point<T,H> end;
+	private Point start;
+	private Point end;
 	private String color;
 	private double width;
 
-	public Line() {
-		super();
-	}
 	
-	public Line(Point<T,H> start, Point<T,H> end, double width, String color) {
+	public Line(Point start, Point end, double width, String color) {
 		super();
 		this.start = start;
 		this.end = end;
@@ -21,19 +19,19 @@ public abstract class Line<T,H> implements Element<T,H> {
 		this.width = width;
 	}
 	
-	public Point<T,H> getStart() {
+	public Point getStart() {
 		return start;
 	}
 
-	public void setStart(Point<T,H> start) {
+	public void setStart(Point start) {
 		this.start = start;
 	}
 
-	public Point<T,H> getEnd() {
+	public Point getEnd() {
 		return end;
 	}
 
-	public void setEnd(Point<T,H> end) {
+	public void setEnd(Point end) {
 		this.end = end;
 	}
 
@@ -51,6 +49,11 @@ public abstract class Line<T,H> implements Element<T,H> {
 
 	public void setWidth(double width) {
 		this.width = width;
+	}
+
+	@Override
+	public Object accept(Visitor v) {
+		return v.visit(this);
 	}
 
 

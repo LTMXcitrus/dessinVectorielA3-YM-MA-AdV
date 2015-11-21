@@ -1,35 +1,37 @@
 package main;
 
+import visitors.VisitorSVG;
+import geometry.Circle;
 import geometry.Drawing;
-import svg.CircleSVG;
-import svg.DrawingSVG;
-import svg.EllipseSVG;
-import svg.LineSVG;
-import svg.PointSVG;
-import svg.RectangleSVG;
+import geometry.Ellipse;
+import geometry.Line;
+import geometry.Point;
+import geometry.Rectangle;
 
 public class Main {
 	
 	public static void main(String[] args) {
-		Drawing d = new DrawingSVG(500, 500);
+		Drawing d = new Drawing(500, 500);
 		
-		PointSVG center = new PointSVG(50,50);
-		CircleSVG c = new CircleSVG(center, 50, "blue");
+		Point center = new Point(50,50);
+		Circle c = new Circle(center, 50, "blue");
 		d.addElementToDrawing(c);
 		
-		PointSVG start = new PointSVG(0,0);
-		PointSVG end = new PointSVG(200,200);
-		LineSVG l = new LineSVG(start, end, 2, "red");
+		Point start = new Point(0,0);
+		Point end = new Point(200,200);
+		Line l = new Line(start, end, 2, "red");
 		d.addElementToDrawing(l);
 		
-		PointSVG origin = new PointSVG(20,20);
-		RectangleSVG r = new RectangleSVG(origin, 100, 100, "black");
+		Point origin = new Point(20,20);
+		Rectangle r = new Rectangle(origin, 100, 100, "black");
 		d.addElementToDrawing(r);
 		
-		PointSVG centerEllipse = new PointSVG(200, 80);
-		EllipseSVG e = new EllipseSVG(centerEllipse, 100, 50, "vert");
+		Point centerEllipse = new Point(200, 80);
+		Ellipse e = new Ellipse(centerEllipse, 100, 50, "vert");
 		d.addElementToDrawing(e);
 		
-		d.draw(null);
+		VisitorSVG svgVisitor = new VisitorSVG();
+		
+		System.out.println(svgVisitor.visit(d));
 	}
 }

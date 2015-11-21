@@ -1,11 +1,13 @@
 package language.main;
 
+import geometry.Drawing;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
 import language.grammarElements.AST;
-import language.grammarElements.Drawing;
+import language.grammarElements.Sheet;
 import language.interpreter.svgCreatorVisitorImpl;
 import language.interpreter.abstracts.svgCreatorLexer;
 import language.interpreter.interfaces.svgCreatorParser;
@@ -14,7 +16,9 @@ import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
-import svg.DrawingSVG;
+import visitors.Visitor;
+import visitors.VisitorDescription;
+import visitors.VisitorSVG;
 
 public class Main {
 	
@@ -36,11 +40,15 @@ public class Main {
 		svgCreatorVisitorImpl visitor = new svgCreatorVisitorImpl();
 		AST ast = visitor.visit(tree);
 		
-		Drawing drawing = (Drawing) ast;
+		Sheet sheet = (Sheet) ast;
 		
-		DrawingSVG svg = drawing.draw();
+		Drawing drawing = sheet.draw();
 		
-		System.out.println(svg.draw(null));
+		
+		Visitor<String> v = new VisitorSVG();
+		//Visitor<String> v = new VisitorDescription();
+		
+		System.out.println(v.visit(drawing));
 		
 		
 	}

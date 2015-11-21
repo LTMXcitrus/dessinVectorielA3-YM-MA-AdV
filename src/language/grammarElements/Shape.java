@@ -1,11 +1,13 @@
 package language.grammarElements;
 
-import java.util.ArrayList;
+import geometry.Circle;
+import geometry.Drawing;
+import geometry.Ellipse;
+import geometry.Line;
+import geometry.Point;
+import geometry.Rectangle;
 
-import svg.CircleSVG;
-import svg.DrawingSVG;
-import svg.EllipseSVG;
-import svg.PointSVG;
+import java.util.ArrayList;
 
 public class Shape extends AST{
 	
@@ -25,28 +27,41 @@ public class Shape extends AST{
 		this("", new Params());
 	}
 	
-	public void draw(DrawingSVG drawing){
+	public void draw(Drawing drawing){
 		ArrayList<Param> params = this.params.getParams();
 		switch(shape){
 		case CERCLE:
-			PointSVG centerCircle = new PointSVG(Double.parseDouble(params.get(0).getValue()),
+			Point centerCircle = new Point(Double.parseDouble(params.get(0).getValue()),
 					Double.parseDouble(params.get(1).getValue()));
-			CircleSVG c = new CircleSVG(centerCircle, Double.parseDouble(params.get(2).getValue()),
+			Circle c = new Circle(centerCircle, Double.parseDouble(params.get(2).getValue()),
 					params.get(3).getValue());
 			drawing.addElementToDrawing(c);
 			break;
 		case ELLIPSE:
-			PointSVG centerEllipse = new PointSVG(Double.parseDouble(params.get(0).getValue()),
+			Point centerEllipse = new Point(Double.parseDouble(params.get(0).getValue()),
 					Double.parseDouble(params.get(1).getValue()));
-			EllipseSVG e = new EllipseSVG(centerEllipse, Double.parseDouble(params.get(2).getValue()),
+			Ellipse e = new Ellipse(centerEllipse, Double.parseDouble(params.get(2).getValue()),
 					Double.parseDouble(params.get(3).getValue()), params.get(4).getValue());
 			drawing.addElementToDrawing(e);
 			break;
 		case LINE:
-			//TODO
+			Point start = new Point(Double.parseDouble(params.get(0).getValue()),
+					Double.parseDouble(params.get(1).getValue()));
+			Point end = new Point(Double.parseDouble(params.get(2).getValue()),
+					Double.parseDouble(params.get(3).getValue()));
+			double width = Double.parseDouble(params.get(4).getValue());
+			String color  = params.get(5).getValue();
+			Line line = new Line(start,end,width,color);
+			drawing.addElementToDrawing(line);
 			break;
 		case RECT:
-			//TODO
+			Point origin = new Point(Double.parseDouble(params.get(0).getValue()),
+					Double.parseDouble(params.get(1).getValue()));
+			double widthRect = Double.parseDouble(params.get(2).getValue());
+			double height = Double.parseDouble(params.get(3).getValue());
+			String colorRect = params.get(4).getValue();
+			Rectangle rect = new Rectangle(origin, widthRect, height, colorRect);
+			drawing.addElementToDrawing(rect);
 			break;
 		}
 	}

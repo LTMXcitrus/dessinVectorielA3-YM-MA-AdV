@@ -1,11 +1,13 @@
 package geometry.interfaces;
 
+import visitors.Visitor;
+
 /**
  * Interface Element
  */
 
-public interface Element<T,H> {
+public interface Element {
 	
-	public T draw(H g);
+	Object accept(Visitor v);
 
 }

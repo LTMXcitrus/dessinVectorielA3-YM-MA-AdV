@@ -1,15 +1,16 @@
 package geometry;
 
+import visitors.Visitor;
 import geometry.interfaces.Element;
 
-public abstract class Ellipse<T,H> implements Element<T,H> {
+public class Ellipse implements Element {
 	
-	private Point<T,H> center;
+	private Point center;
 	private double radiusX;
 	private double radiusY;
 	private String color;
 	
-	public Ellipse(Point<T,H> center, double radiusX, double radiusY, String color) {
+	public Ellipse(Point center, double radiusX, double radiusY, String color) {
 		super();
 		this.center = center;
 		this.radiusX = radiusX;
@@ -17,15 +18,11 @@ public abstract class Ellipse<T,H> implements Element<T,H> {
 		this.color = color;
 	}
 
-	public Ellipse() {
-		super();
-	}
-
-	public Point<T,H> getCenter() {
+	public Point getCenter() {
 		return center;
 	}
 
-	public void setCenter(Point<T,H> center) {
+	public void setCenter(Point center) {
 		this.center = center;
 	}
 
@@ -51,5 +48,10 @@ public abstract class Ellipse<T,H> implements Element<T,H> {
 
 	public void setColor(String color) {
 		this.color = color;
+	}
+
+	@Override
+	public Object accept(Visitor v) {
+		return v.visit(this);
 	}
 }
