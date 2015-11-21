@@ -9,59 +9,89 @@ import geometry.Rectangle;
 
 import java.util.ArrayList;
 
+import language.interpreter.ErrorHandler;
+
 public class Shape extends AST{
-	
+
 	private static final String CERCLE = "CERCLE", ELLIPSE ="ELLIPSE", LINE ="LINE", RECT="RECT";
-	
-	
-	
+
 	private String shape;
 	private Params params;
-	
-	public Shape(String shape, Params params){
+	private ErrorHandler handler;
+
+	public Shape(String shape, Params params, ErrorHandler handler){
 		this.shape=shape;
 		this.params=params;
+		this.handler=handler;
 	}
-	
-	public Shape(){
-		this("", new Params());
-	}
-	
+
+	/**
+	 * This method handles the given shapes, instantiates the equivalent Java class and add it to the Drawing.
+	 * @param drawing The drawing the user wants to show.
+	 */
 	public void draw(Drawing drawing){
 		ArrayList<Param> params = this.params.getParams();
 		switch(shape){
 		case CERCLE:
-			Point centerCircle = new Point(Double.parseDouble(params.get(0).getValue()),
-					Double.parseDouble(params.get(1).getValue()));
-			Circle c = new Circle(centerCircle, Double.parseDouble(params.get(2).getValue()),
-					params.get(3).getValue());
-			drawing.addElementToDrawing(c);
+			try{
+				double x = Double.parseDouble(params.get(0).getValue());
+				double y = Double.parseDouble(params.get(1).getValue());
+				double radius = Double.parseDouble(params.get(2).getValue());
+				String color = params.get(3).getValue();
+
+				Point centerCircle = new Point(x,y);
+				Circle c = new Circle(centerCircle, radius,color);
+				drawing.addElementToDrawing(c);
+			}
+			catch(Exception e){
+				handler.addError("wrong argument in a circle construction",e);
+			}
 			break;
 		case ELLIPSE:
-			Point centerEllipse = new Point(Double.parseDouble(params.get(0).getValue()),
-					Double.parseDouble(params.get(1).getValue()));
-			Ellipse e = new Ellipse(centerEllipse, Double.parseDouble(params.get(2).getValue()),
-					Double.parseDouble(params.get(3).getValue()), params.get(4).getValue());
-			drawing.addElementToDrawing(e);
+
+			try{
+				double x = Double.parseDouble(params.get(0).getValue());
+				double y = Double.parseDouble(params.get(1).getValue());
+				double radiusX = Double.parseDouble(params.get(2).getValue());
+				double radiusY = Double.parseDouble(params.get(3).getValue());
+				String color = params.get(4).getValue();
+
+				Point centerEllipse = new Point(x, y);
+				Ellipse e = new Ellipse(centerEllipse, radiusX,	radiusY, color);
+				drawing.addElementToDrawing(e);
+			}
+			catch(Exception e){
+				handler.addError("wrong argument in an ellipse construction", e);
+			}
 			break;
 		case LINE:
-			Point start = new Point(Double.parseDouble(params.get(0).getValue()),
-					Double.parseDouble(params.get(1).getValue()));
-			Point end = new Point(Double.parseDouble(params.get(2).getValue()),
-					Double.parseDouble(params.get(3).getValue()));
-			double width = Double.parseDouble(params.get(4).getValue());
-			String color  = params.get(5).getValue();
-			Line line = new Line(start,end,width,color);
-			drawing.addElementToDrawing(line);
+			try{
+				Point start = new Point(Double.parseDouble(params.get(0).getValue()),
+						Double.parseDouble(params.get(1).getValue()));
+				Point end = new Point(Double.parseDouble(params.get(2).getValue()),
+						Double.parseDouble(params.get(3).getValue()));
+				double width = Double.parseDouble(params.get(4).getValue());
+				String color  = params.get(5).getValue();
+				Line line = new Line(start,end,width,color);
+				drawing.addElementToDrawing(line);
+			}
+			catch(Exception e){
+				handler.addError("wrong argument in a line construction", e);
+			}
 			break;
 		case RECT:
-			Point origin = new Point(Double.parseDouble(params.get(0).getValue()),
-					Double.parseDouble(params.get(1).getValue()));
-			double widthRect = Double.parseDouble(params.get(2).getValue());
-			double height = Double.parseDouble(params.get(3).getValue());
-			String colorRect = params.get(4).getValue();
-			Rectangle rect = new Rectangle(origin, widthRect, height, colorRect);
-			drawing.addElementToDrawing(rect);
+			try{
+				Point origin = new Point(Double.parseDouble(params.get(0).getValue()),
+						Double.parseDouble(params.get(1).getValue()));
+				double widthRect = Double.parseDouble(params.get(2).getValue());
+				double height = Double.parseDouble(params.get(3).getValue());
+				String colorRect = params.get(4).getValue();
+				Rectangle rect = new Rectangle(origin, widthRect, height, colorRect);
+				drawing.addElementToDrawing(rect);
+			}
+			catch(Exception e){
+				handler.addError("wrong argument in a rectangle construction", e);
+			}
 			break;
 		}
 	}

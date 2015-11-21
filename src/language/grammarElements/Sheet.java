@@ -19,6 +19,10 @@ public class Sheet extends AST{
 		this(new Canvas(), new ArrayList<Shape>());
 	}
 
+	/**
+	 * 
+	 * @return the drawing with all the element given by the user
+	 */
 	public Drawing draw() {
 		Drawing drawing = canvas.draw();
 		for(Shape shape : shapes){

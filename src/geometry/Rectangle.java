@@ -2,7 +2,9 @@ package geometry;
 
 import visitors.Visitor;
 import geometry.interfaces.Element;
-
+/*
+ * Class that represents a Rectangle and implements an Element
+ */
 public class Rectangle implements Element {
 	
 	private Point origin;

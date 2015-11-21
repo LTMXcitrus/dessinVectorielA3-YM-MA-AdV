@@ -8,7 +8,7 @@ import java.util.List;
 import visitors.Visitor;
 
 /**
- * Class to create a Drawing and implments Element
+ * Class to create a Drawing and implements Element
  */
 public class Drawing implements Element {
 

@@ -15,6 +15,10 @@ public class Canvas extends AST{
 		this(new Params());
 	}
 	
+	/**
+	 * 
+	 * @return the drawing element with the given dimensions
+	 */
 	public Drawing draw(){
 		ArrayList<Param> drawingSize = params.getParams();
 		double width = Double.parseDouble(drawingSize.get(0).getValue());

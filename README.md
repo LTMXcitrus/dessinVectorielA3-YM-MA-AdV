@@ -23,7 +23,5 @@ Ensuite, dans le fichier "files/test.svgproject", on peut écrire les instructio
 Il ne reste plus qu'à éxécuter la classe language.main.Main qui affichera le svg en console (sous forme xml) et générera un
 fichier "test.svg" en racine du projet.
 
-Pour l'instant (02/11/2015 21:10) le langage ne reconnait que les cercles:
-
 Canvas(500,500)   ------> taille du layout, à savoir la feuille de travail sur laquelle seront "posées" les formes.
 CERCLE(120,120,50,red) -----> coordonnées du centre (x,y), rayon, et couleur.

@@ -3,22 +3,26 @@ package main;
 import geometry.Drawing;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileInputStream;
-import java.io.InputStream;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
+import javax.swing.JTextPane;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyleContext;
 
 import language.grammarElements.AST;
 import language.grammarElements.Sheet;
+import language.interpreter.ErrorHandler;
 import language.interpreter.svgCreatorVisitorImpl;
 import language.interpreter.abstracts.svgCreatorLexer;
 import language.interpreter.interfaces.svgCreatorParser;
@@ -35,7 +39,7 @@ public class Window extends JFrame{
 	
 	private Visitor visitor = new VisitorSVG();
 	
-	private JTextArea area;
+	private JTextPane area;
 
 	public Window() {
 		super("Générer une image");
@@ -59,7 +63,7 @@ public class Window extends JFrame{
 
 	public void creerCentre(){
 		
-		area = new JTextArea();
+		area = new JTextPane();
 		area.setPreferredSize(new Dimension(500,500));
 		this.getContentPane().add(area, BorderLayout.CENTER);
 	}
@@ -96,6 +100,8 @@ public class Window extends JFrame{
 		this.getContentPane().add(panneauBas,BorderLayout.SOUTH);
 	}
 	
+	
+	
 	public void generate(Visitor v){
 		
 		String code = area.getText();
@@ -108,7 +114,9 @@ public class Window extends JFrame{
 		ParseTree tree = parser.drawing();
 		System.out.println(tree.toStringTree(parser));
 		
-		svgCreatorVisitorImpl visitor = new svgCreatorVisitorImpl();
+		ErrorHandler handler = new ErrorHandler(area);
+		
+		svgCreatorVisitorImpl visitor = new svgCreatorVisitorImpl(handler);
 		AST ast = visitor.visit(tree);
 		
 		Sheet sheet = (Sheet) ast;
