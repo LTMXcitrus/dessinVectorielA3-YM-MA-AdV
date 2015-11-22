@@ -8,9 +8,13 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -35,6 +39,9 @@ import visitors.Visitor;
 import visitors.implementations.VisitorDescription;
 import visitors.implementations.VisitorSVG;
 
+/**
+ * Class which creates the main frame of the GUI
+ */
 public class Window extends JFrame{
 	
 	private Visitor visitor = new VisitorSVG();
@@ -136,6 +143,35 @@ public class Window extends JFrame{
 		
 		Drawing drawing = sheet.draw();
 		
-		System.out.println(v.visit(drawing));
+		String drawingText = (String) v.visit(drawing);
+		
+		// Saving the file :
+		JFileChooser fc = new JFileChooser();
+		int returnVal = fc.showSaveDialog(this);
+
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+        	saveText(drawingText, fc.getSelectedFile().getName(), fc.getCurrentDirectory().toString());
+        }
+		System.out.println(drawingText);
+	}
+	
+	public void saveText(String text, String fileName, String directory) {
+		try
+		{
+			FileWriter fw = null;
+			if (visitor instanceof VisitorSVG) {
+				fw = new FileWriter (new File(directory+"//"+fileName+".svg"));
+			} else if (visitor instanceof VisitorDescription) {
+				fw = new FileWriter (new File(directory+"//"+fileName+".txt"));
+			}
+			
+			fw.write(text);
+
+			fw.close();
+		}
+		catch (IOException exception)
+		{
+			System.out.println ("Error while writing the file : " + exception.getMessage());
+		}
 	}
 }

@@ -2,8 +2,9 @@ package geometry;
 
 import visitors.Visitor;
 import geometry.interfaces.Element;
-/*
- * Class that represents a Line and implements an Element
+
+/**
+ * Class that represents a Line represented by two points, a color and a width and implements an Element
  */
 public class Line implements Element {
 	

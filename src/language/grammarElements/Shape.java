@@ -11,7 +11,10 @@ import java.util.ArrayList;
 
 import language.interpreter.ErrorHandler;
 
-public class Shape extends AST{
+/**
+ * Class which handles the given shapes given by the user (circle, ellipse, etc.) and add them in the drawing to be shown to the user
+ */
+public class Shape extends AST {
 
 	private static final String CERCLE = "CERCLE", ELLIPSE ="ELLIPSE", LINE ="LINE", RECT="RECT";
 
@@ -19,17 +22,23 @@ public class Shape extends AST{
 	private Params params;
 	private ErrorHandler handler;
 
-	public Shape(String shape, Params params, ErrorHandler handler){
-		this.shape=shape;
-		this.params=params;
-		this.handler=handler;
+	/**
+	 * Constructor of the class Shape
+	 * @param shape The name of the shape to add to the Drawing (circle, ellipse, etc.)
+	 * @param params The parameters given by the user corresponding to the shape
+	 * @param handler Handle the errors
+	 */
+	public Shape(String shape, Params params, ErrorHandler handler) {
+		this.shape = shape;
+		this.params = params;
+		this.handler = handler;
 	}
 
 	/**
 	 * This method handles the given shapes, instantiates the equivalent Java class and add it to the Drawing.
 	 * @param drawing The drawing the user wants to show.
 	 */
-	public void draw(Drawing drawing){
+	public void draw(Drawing drawing) {
 		ArrayList<Param> params = this.params.getParams();
 		switch(shape){
 		case CERCLE:

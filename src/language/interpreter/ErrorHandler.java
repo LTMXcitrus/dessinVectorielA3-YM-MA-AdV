@@ -8,6 +8,9 @@ import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
 
+/**
+ * Class which handles the errors and add them to the JTextPane of the GUI
+ */
 public class ErrorHandler {
 	
 	JTextPane area;

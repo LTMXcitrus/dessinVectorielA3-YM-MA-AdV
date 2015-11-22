@@ -7,7 +7,7 @@ import geometry.Line;
 import geometry.Point;
 import geometry.Rectangle;
 
-/*
+/**
  *	Visitor interface with a visit method for each geometry element.
  *	The type T allows a developer to add a new kind of generated drawing. 
  */
