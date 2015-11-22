@@ -4,19 +4,23 @@ import geometry.Drawing;
 
 import java.util.ArrayList;
 
-public class Canvas extends AST{
+/**
+ * Class which represents the drawing element according to the given parameters (width and height)
+ */
+public class Canvas extends AST {
 
 	private Params params;
 	
-	public Canvas(Params params){
-		this.params=params;
+	public Canvas(Params params) {
+		this.params = params;
 	}
-	public Canvas(){
+	
+	public Canvas() {
 		this(new Params());
 	}
 	
 	/**
-	 * 
+	 * Method that creates the Drawing element with given parameters
 	 * @return the drawing element with the given dimensions
 	 */
 	public Drawing draw(){

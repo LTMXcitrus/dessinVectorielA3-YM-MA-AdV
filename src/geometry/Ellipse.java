@@ -2,8 +2,9 @@ package geometry;
 
 import visitors.Visitor;
 import geometry.interfaces.Element;
-/*
- * Class that represents a Ellipse and implements an Element
+
+/**
+ * Class that represents a Ellipse represented by a center, two radius and a color and implements an Element
  */
 public class Ellipse implements Element {
 	

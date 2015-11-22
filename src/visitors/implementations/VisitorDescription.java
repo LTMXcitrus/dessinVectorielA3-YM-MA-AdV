@@ -9,6 +9,9 @@ import geometry.Point;
 import geometry.Rectangle;
 import geometry.interfaces.Element;
 
+/**
+ * Class which implements Visitor to create a description of what the user entered
+ */
 public class VisitorDescription implements Visitor<String>{
 
 	@Override

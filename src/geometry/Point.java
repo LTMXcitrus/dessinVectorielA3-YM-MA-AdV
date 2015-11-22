@@ -4,7 +4,7 @@ import visitors.Visitor;
 import geometry.interfaces.Element;
 
 /**
- * Class that represents a point and implements an Element
+ * Class that represents a Point represented by its coordinates and implements an Element
  */
 
 public class Point implements Element{

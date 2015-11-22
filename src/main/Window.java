@@ -39,6 +39,9 @@ import visitors.Visitor;
 import visitors.implementations.VisitorDescription;
 import visitors.implementations.VisitorSVG;
 
+/**
+ * Class which creates the main frame of the GUI
+ */
 public class Window extends JFrame{
 	
 	private Visitor visitor = new VisitorSVG();

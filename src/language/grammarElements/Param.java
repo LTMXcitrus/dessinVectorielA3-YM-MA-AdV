@@ -1,5 +1,8 @@
 package language.grammarElements;
 
+/**
+ * Class which represents a parameter (given by the user) for the AST
+ */
 public class Param extends AST{
 	
 	private String value;

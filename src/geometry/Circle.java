@@ -4,7 +4,7 @@ import visitors.Visitor;
 import geometry.interfaces.Element;
 
 /**
- * Class that represents a Circle and implements an Element
+ * Class that represents a Circle represented by its center, a radius and a color and implements an Element
  */
 public class Circle implements Element {
 	

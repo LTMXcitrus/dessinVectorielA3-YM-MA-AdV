@@ -13,6 +13,9 @@ import geometry.Point;
 import geometry.Rectangle;
 import geometry.interfaces.Element;
 
+/**
+ * Class which implements Visitor to creates a SVG of what the user entered 
+ */
 public class VisitorSVG implements Visitor<String> {
 	private static final String OPEN_SVG = "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" ";
 	private static final String CLOSE_SVG = "</svg>";

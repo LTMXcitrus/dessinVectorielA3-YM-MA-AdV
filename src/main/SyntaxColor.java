@@ -8,6 +8,9 @@ import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
 
+/**
+ * Class which gives a color syntax to the user entry (not finished)
+ */
 public class SyntaxColor {
 	
 	private static final String CERCLE = "CERCLE";

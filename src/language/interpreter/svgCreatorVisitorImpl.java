@@ -17,6 +17,9 @@ import language.interpreter.interfaces.svgCreatorParser;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.misc.NotNull;
 
+/**
+ * Class which implements the creation of an AST
+ */
 public class svgCreatorVisitorImpl extends svgCreatorBaseVisitor<AST>{
 	
 	private ErrorHandler handler;

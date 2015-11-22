@@ -3,7 +3,7 @@ package geometry.interfaces;
 import visitors.Visitor;
 
 /**
- * Interface Element
+ * Interface Element : an element of a drawing
  */
 
 public interface Element {
