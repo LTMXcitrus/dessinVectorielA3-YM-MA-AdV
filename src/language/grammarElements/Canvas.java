@@ -1,8 +1,8 @@
 package language.grammarElements;
 
-import java.util.ArrayList;
+import geometry.Drawing;
 
-import svg.DrawingSVG;
+import java.util.ArrayList;
 
 public class Canvas extends AST{
 
@@ -15,10 +15,14 @@ public class Canvas extends AST{
 		this(new Params());
 	}
 	
-	public DrawingSVG draw(){
+	/**
+	 * 
+	 * @return the drawing element with the given dimensions
+	 */
+	public Drawing draw(){
 		ArrayList<Param> drawingSize = params.getParams();
 		double width = Double.parseDouble(drawingSize.get(0).getValue());
 		double height = Double.parseDouble(drawingSize.get(1).getValue());
-		return new DrawingSVG(width,height);
+		return new Drawing(width,height);
 	}
 }

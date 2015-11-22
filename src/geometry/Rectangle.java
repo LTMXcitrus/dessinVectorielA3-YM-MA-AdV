@@ -1,19 +1,19 @@
 package geometry;
 
+import visitors.Visitor;
 import geometry.interfaces.Element;
-
-public abstract class Rectangle<T,H> implements Element<T,H> {
+/*
+ * Class that represents a Rectangle and implements an Element
+ */
+public class Rectangle implements Element {
 	
-	private Point<T,H> origin;
+	private Point origin;
 	private double width;
 	private double height;
 	private String color;
 	
-	public Rectangle() {
-		super();
-	}
 	
-	public Rectangle(Point<T,H> origin, double width, double height, String color) {
+	public Rectangle(Point origin, double width, double height, String color) {
 		super();
 		this.origin = origin;
 		this.width = width;
@@ -21,10 +21,10 @@ public abstract class Rectangle<T,H> implements Element<T,H> {
 		this.color = color;
 	}
 	
-	public Point<T,H> getOrigin() {
+	public Point getOrigin() {
 		return origin;
 	}
-	public void setOrigin(Point<T,H> origin) {
+	public void setOrigin(Point origin) {
 		this.origin = origin;
 	}
 	public double getWidth() {
@@ -45,6 +45,9 @@ public abstract class Rectangle<T,H> implements Element<T,H> {
 	public void setColor(String color) {
 		this.color = color;
 	}
-	
-	
+
+	@Override
+	public Object accept(Visitor v) {
+		return v.visit(this);
+	}
 }
