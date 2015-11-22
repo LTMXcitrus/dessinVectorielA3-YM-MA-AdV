@@ -57,18 +57,6 @@ public class VisitorSVG implements Visitor<String> {
 		}
 		stringSVG += CLOSE_SVG;
 
-		try
-		{
-			FileWriter fw = new FileWriter (new File("test.svg"));
-
-			fw.write(stringSVG);
-
-			fw.close();
-		}
-		catch (IOException exception)
-		{
-			System.out.println ("Erreur lors de l'écriture du svg : " + exception.getMessage());
-		}
 		return stringSVG;
 	}
 
