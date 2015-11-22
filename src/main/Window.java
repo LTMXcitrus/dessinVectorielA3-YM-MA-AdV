@@ -74,7 +74,7 @@ public class Window extends JFrame{
 		area = new JTextPane();
 		area.setPreferredSize(new Dimension(500,500));
 		colorizer = new SyntaxColor(area);
-		this.getContentPane().add(area, BorderLayout.CENTER);
+		this.getContentPane().add(new JScrollPane(area), BorderLayout.CENTER);
 	}
 	
 	public void creerBas(){
